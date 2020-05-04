@@ -1,0 +1,30 @@
+﻿
+@model Employee
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <style>
+        .input-validation-error{border :1px solid red}
+        .field-validation-error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Welcome</h2>
+    <h4>Add Employee</h4>
+    <form method="post">
+        Name:  @Html.TextBoxFor(m => m.Name) @Html.ValidationMessageFor(m => m.Name)<br />
+        Email: @Html.TextBoxFor(m => m.Email) @Html.ValidationMessageFor(m => m.Email)<br />
+        Age:  @Html.TextBoxFor(m => m.Age) @Html.ValidationMessageFor(m => m.Age)<br />
+        Address:@Html.TextAreaFor(m => m.Address) @Html.ValidationMessageFor(m => m.Address)<br />
+        Salary:  @Html.TextBoxFor(m => m.Salary) @Html.ValidationMessageFor(m => m.Salary)<br />
+        Gender:@Html.EnumDropDownListFor(m => m.Gender) @Html.ValidationMessageFor(m => m.Gender)<br />
+        <input type="submit" value="Add" />
+    </form>
+
+</body>
+</html>
