@@ -12,7 +12,7 @@ namespace MVCDay2
         {
         }
 
-        public virtual DbSet<Employee> employess { get; set; }
+        public virtual DbSet<Employee> Employees { get; set; }
     }
 
 }

@@ -16,23 +16,5 @@ namespace MVCDay2.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ViewResult Index(Employee emp)
-        {
-            if (ModelState.IsValid)
-            {
-                ModelContext context = new ModelContext();
-                var e = context.employess.Add(emp);
-                var r=context.SaveChanges();
-                if (r > 0) {
-                    ViewBag.Name = emp.Name;
-                    return View("SucessAdded", emp);
-                }
-                else return View();
-
-            }
-            return View();
-        }
-
     }
 }

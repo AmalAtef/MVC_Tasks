@@ -16,14 +16,17 @@ namespace MVCDay2.Models
     {
         public int Id { get; set; }
         [Required]
+        [MaxLength(50)]
         public string Name { get; set; }
         [Required]
         [EmailAddress]
         public string Email { get; set; }
         [Required]
+        [MaxLength(256)]
         public string Address { get; set; }
         public int Age { get; set; }
         [Required]
+        [Range(1500,10000)]
         public int Salary { get; set; }
         [Required]
         public Gender Gender { get; set; }

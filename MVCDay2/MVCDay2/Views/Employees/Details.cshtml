@@ -1,0 +1,21 @@
+﻿
+@model Employee
+
+@{
+    ViewBag.Title = "Employees | Details";
+}
+
+<br />
+<br />
+<div class="card" style="width: 40rem;">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5><br />
+        <h6 class="card-subtitle mb-2 text-muted">Email : @Model.Email</h6><br />
+        <h6 class="card-subtitle mb-2 text-muted">Age : @Model.Age</h6><br />
+        <h6 class="card-subtitle mb-2 text-muted">Address : @Model.Address</h6><br />
+        <h6 class="card-subtitle mb-2 text-muted">Salary : @Model.Salary</h6><br />
+        <h6 class="card-subtitle mb-2 text-muted">Gender : @Model.Gender</h6><br /><br />
+        @Html.ActionLink("Back to list", "Index", "Employees", null, new { @class = "btn btn-light" })<br />
+    </div>
+</div>
+
