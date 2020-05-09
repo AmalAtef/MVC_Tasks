@@ -27,6 +27,7 @@ namespace MVCDay2.Models
         public int Age { get; set; }
         [Required]
         [Range(1500,10000)]
+        [DataType(DataType.Currency)]
         public int Salary { get; set; }
         [Required]
         public Gender Gender { get; set; }

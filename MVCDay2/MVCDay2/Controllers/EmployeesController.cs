@@ -1,6 +1,8 @@
 ﻿using MVCDay2.Models;
+using MVCDay2.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -12,21 +14,29 @@ namespace MVCDay2.Controllers
         ModelContext context = new ModelContext();
         public ViewResult Index()
         {
-            return View(context.Employees.ToList());
+            EmployeeViewModel employeeVM = new EmployeeViewModel { Employees = context.Employees.ToList() };
+            return View(employeeVM);
         }
 
         public ViewResult Add()
         {
-            return View();
+            ViewBag.Action = "Add";
+            return View("EmployeeForm");
         }
         public ViewResult Details(int id)
         {
             return View(context.Employees.FirstOrDefault(e=>e.Id==id));
         }
 
-        public ViewResult Edit(int id)
+        public ActionResult Edit(int id)
         {
-            return View(context.Employees.FirstOrDefault(e => e.Id == id));
+            Employee emp = context.Employees.FirstOrDefault(e => e.Id == id);
+            if (emp != null)
+            {
+                ViewBag.Action = "Edit";
+                return View("EmployeeForm",emp);
+            }
+            return HttpNotFound("Employee not found");
         }
 
 
@@ -35,25 +45,28 @@ namespace MVCDay2.Controllers
         {
             if (ModelState.IsValid)
             {
-                Employee employee = context.Employees.FirstOrDefault(e => e.Id == emp.Id);
-                employee.Name = emp.Name;
-                employee.Email = emp.Email;
-                employee.Age = emp.Age;
-                employee.Gender = emp.Gender;
-                employee.Address = emp.Address;
-                employee.Salary = emp.Salary;
+                context.Employees.Attach(emp);
+                context.Entry(emp).State = EntityState.Modified;
                 context.SaveChanges();
+                TempData["Message"] = "Employee Edited Successfully";
                 return RedirectToAction("Index");
             }
-            return View();
+            ViewBag.Action = "Edit";
+            return View("EmployeeForm");
         }
 
         public ActionResult Delete(int id)
         {
-
-            context.Employees.Remove(context.Employees.FirstOrDefault(e => e.Id == id));
+            Employee emp = context.Employees.FirstOrDefault(e => e.Id == id);
+            if (emp != null)
+            {
+            context.Employees.Remove(emp);
             context.SaveChanges();
-            return RedirectToAction("Index");
+                //return RedirectToAction("Index");
+                return Json(true);
+
+            }
+            return HttpNotFound("Employee not found");
         }
 
         [HttpPost]
@@ -63,9 +76,24 @@ namespace MVCDay2.Controllers
             {
                 context.Employees.Add(emp);
                 context.SaveChanges();
+                TempData["Message"] = "Employee Added Successfully";
                 return RedirectToAction("Index");
             }
-            return View();
+            ViewBag.Action = "Add";
+            return View("EmployeeForm");
+        }
+
+        [HttpPost]
+        public ActionResult AddAjax(Employee employee)
+        {
+            if (ModelState.IsValid)
+            {
+                context.Employees.Add(employee);
+                context.SaveChanges();
+                TempData["Message"] = "Employee Added Successfully";
+                return PartialView("_EmpoyeePartial");
+            }
+            return Json(ModelState);
         }
     }
 }

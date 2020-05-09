@@ -1,4 +1,4 @@
-﻿@model int
+﻿@model int?
 
 <div class="btn-group" role="group" aria-label="Basic example">
     <a href="@Url.Action("Details",new {id=Model})" class="btn btn-primary btn-sm">
@@ -7,8 +7,12 @@
     <a href="@Url.Action("Edit",new {id=Model})" class="btn btn-success btn-sm">
         <i class="far fa-edit"></i>
     </a>
-    <a href="@Url.Action("Delete",new {id=Model})" class="btn btn-danger btn-sm">
+
+    <button class="btn btn-danger btn-sm" onclick="confirmDelete(@Model)">
         <i class="far fa-trash-alt"></i>
-    </a>
+    </button>
+
+    @*<a href="@Url.Action("Delete",new {id=Model})" class="btn btn-danger btn-sm">
+    </a>*@
 
 </div>
