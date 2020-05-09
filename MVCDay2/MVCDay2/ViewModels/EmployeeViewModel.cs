@@ -10,5 +10,6 @@ namespace MVCDay2.ViewModels
     {
         public List<Employee> Employees { get; set; }
         public Employee Employee { get; set; }
+        public List<Department> Departments { get; set; }
     }
 }

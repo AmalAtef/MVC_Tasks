@@ -14,14 +14,22 @@ namespace MVCDay2.Controllers
         ModelContext context = new ModelContext();
         public ViewResult Index()
         {
-            EmployeeViewModel employeeVM = new EmployeeViewModel { Employees = context.Employees.ToList() };
+            EmployeeViewModel employeeVM = new EmployeeViewModel {
+                Employees = context.Employees.ToList(),
+                Departments=context.Departments.ToList()
+            };
             return View(employeeVM);
         }
 
         public ViewResult Add()
         {
             ViewBag.Action = "Add";
-            return View("EmployeeForm");
+            EmployeeViewModel employeeVM = new EmployeeViewModel
+            {
+                Departments = context.Departments.ToList()
+            };
+
+            return View("EmployeeForm",employeeVM);
         }
         public ViewResult Details(int id)
         {
@@ -34,7 +42,11 @@ namespace MVCDay2.Controllers
             if (emp != null)
             {
                 ViewBag.Action = "Edit";
-                return View("EmployeeForm",emp);
+                EmployeeViewModel employeeVM = new EmployeeViewModel
+                {
+                    Departments = context.Departments.ToList()
+                };
+                return View("EmployeeForm",employeeVM);
             }
             return HttpNotFound("Employee not found");
         }
@@ -52,7 +64,11 @@ namespace MVCDay2.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.Action = "Edit";
-            return View("EmployeeForm");
+            EmployeeViewModel employeeVM = new EmployeeViewModel
+            {
+                Departments = context.Departments.ToList()
+            };
+            return View("EmployeeForm",employeeVM);
         }
 
         public ActionResult Delete(int id)
@@ -80,7 +96,11 @@ namespace MVCDay2.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.Action = "Add";
-            return View("EmployeeForm");
+            EmployeeViewModel employeeVM = new EmployeeViewModel
+            {
+                Departments = context.Departments.ToList()
+            };
+            return View("EmployeeForm", employeeVM);
         }
 
         [HttpPost]

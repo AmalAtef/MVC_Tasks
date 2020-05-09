@@ -50,7 +50,6 @@ E:\ITI\MVC\Day1\Lab\MVCDay2\MVCDay2\obj\Debug\MVCDay2.dll
 E:\ITI\MVC\Day1\Lab\MVCDay2\MVCDay2\obj\Debug\MVCDay2.pdb
 E:\ITI\MVC\Day1\Lab\MVCDay2\MVCDay2\obj\Debug\MVCDay2.Migrations.initial.resources
 E:\ITI\MVC\Day1\Lab\MVCDay2\MVCDay2\obj\Debug\MVCDay2.csproj.GenerateResource.Cache
-E:\ITI\MVC\Day1\Lab\MVCDay1\MVCDay2\MVCDay2\obj\Debug\MVCDay2.csprojResolveAssemblyReference.cache
 E:\ITI\MVC\Day1\Lab\MVCDay1\MVCDay2\MVCDay2\obj\Debug\MVCDay2.Migrations.initial.resources
 E:\ITI\MVC\Day1\Lab\MVCDay1\MVCDay2\MVCDay2\obj\Debug\MVCDay2.csproj.GenerateResource.Cache
 E:\ITI\MVC\Day1\Lab\MVCDay1\MVCDay2\MVCDay2\obj\Debug\MVCDay2.dll
@@ -103,3 +102,14 @@ E:\ITI\MVC\Day1\Lab\MVCDay1\MVCDay2\MVCDay2\bin\System.Web.Webpages.Razor.xml
 E:\ITI\MVC\Day1\Lab\MVCDay1\MVCDay2\MVCDay2\bin\System.Web.Helpers.xml
 E:\ITI\MVC\Day1\Lab\MVCDay1\MVCDay2\MVCDay2\bin\System.Web.Mvc.xml
 E:\ITI\MVC\Day1\Lab\MVCDay1\MVCDay2\MVCDay2\obj\Debug\MVCDay2.Migrations.editEmployeModel.resources
+E:\ITI\MVC\Day1\Lab\MVCDay1\MVCDay2\MVCDay2\obj\Debug\MVCDay2.Migrations.AddDepartmentTable.resources
+E:\ITI\MVC\Day1\Lab\MVCDay1\MVCDay2\MVCDay2\obj\Debug\MVCDay2.Migrations.AddRelEmpDept.resources
+E:\ITI\MVC\Day1\Lab\MVCDay1\MVCDay2\MVCDay2\bin\Antlr3.Runtime.dll
+E:\ITI\MVC\Day1\Lab\MVCDay1\MVCDay2\MVCDay2\bin\Newtonsoft.Json.dll
+E:\ITI\MVC\Day1\Lab\MVCDay1\MVCDay2\MVCDay2\bin\System.Web.Optimization.dll
+E:\ITI\MVC\Day1\Lab\MVCDay1\MVCDay2\MVCDay2\bin\WebGrease.dll
+E:\ITI\MVC\Day1\Lab\MVCDay1\MVCDay2\MVCDay2\bin\Antlr3.Runtime.pdb
+E:\ITI\MVC\Day1\Lab\MVCDay1\MVCDay2\MVCDay2\bin\Newtonsoft.Json.xml
+E:\ITI\MVC\Day1\Lab\MVCDay1\MVCDay2\MVCDay2\bin\System.Web.Optimization.xml
+E:\ITI\MVC\Day1\Lab\MVCDay1\MVCDay2\MVCDay2\bin\MVCDay2.dll.CodeAnalysisLog.xml
+E:\ITI\MVC\Day1\Lab\MVCDay1\MVCDay2\MVCDay2\bin\MVCDay2.dll.lastcodeanalysissucceeded
